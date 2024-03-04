@@ -1,0 +1,27 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.noMovies {
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container .list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1158px) {
+  .container .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1159px) {
+  .container .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

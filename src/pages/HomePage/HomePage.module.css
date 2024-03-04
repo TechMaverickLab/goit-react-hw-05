@@ -1,0 +1,43 @@
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  padding: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image {
+    width: 320px;
+    height: 420px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1158px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .image {
+    width: 360px;
+    height: 480px;
+  }
+}
+
+@media (min-width: 1159px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .image {
+    width: 420px;
+    height: 560px;
+  }
+}

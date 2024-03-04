@@ -1,0 +1,83 @@
+.cast {
+  padding: 20px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); */
+  gap: 20px;
+}
+
+.item {
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.name {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.character {
+  font-size: 14px;
+  color: #666;
+}
+
+.actorImage {
+  /* Встановіть ширину за вашим бажанням */
+  height: auto; /* Збережіть співвідношення сторін */
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .image {
+    width: 320px;
+    height: 420px;
+  }
+
+  .actorImage {
+    width: 100px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1158px) {
+  .list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .image {
+    width: 360px;
+    height: 480px;
+  }
+
+  .actorImage {
+    width: 120px;
+  }
+}
+
+@media (min-width: 1159px) {
+  .list {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .image {
+    width: 420px;
+    height: 560px;
+  }
+
+  .actorImage {
+    width: 160px;
+  }
+}

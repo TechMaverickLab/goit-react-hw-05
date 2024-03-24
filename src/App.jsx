@@ -1,4 +1,4 @@
-import { HashRouter, Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavigationProvider } from './contexts/NavigationProvider';
 import HomePage from './pages/HomePage/HomePage';
 import MoviesPage from './pages/MoviesPage/MoviesPage';
@@ -8,7 +8,7 @@ import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/goit-react-hw-05">
       <NavigationProvider>
         <Navigation />
         <Routes>

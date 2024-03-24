@@ -8,7 +8,7 @@ import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (
-    <Router basename="/goit-react-hw-05">
+    <Router basename="/">
       <NavigationProvider>
         <Navigation />
         <Routes>

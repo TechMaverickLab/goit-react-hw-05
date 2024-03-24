@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styles from './MovieCard.module.css';
 
 function MovieCard({ movie }) {
-  const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  const imageUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/placeholder_for_movies.webp';
 
   return (
     <div className={styles.card}>

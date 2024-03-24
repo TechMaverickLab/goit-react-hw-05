@@ -11,7 +11,7 @@ function MovieList({ movies }) {
         <li key={movie.id} className={styles.item}>
           <Link to={`/movies/${movie.id}`} state={{ from: location }}>
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/placeholder_for_movies.webp'}
               alt={movie.title}
               className={styles.image}
             />

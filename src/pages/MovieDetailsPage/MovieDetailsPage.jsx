@@ -37,7 +37,7 @@ function MovieDetailsPage() {
     return <div>Loading...</div>;
   }
 
-  const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  const imageUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/placeholder_for_movies.webp';
 
   return (
     <div className={styles.movieDetails}>

@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './MovieDetailsPage.module.css';
 import { Routes, Route } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import MovieCast from '../../components/MovieCast/MovieCast';
 import MovieReviews from '../../components/MovieReviews/MovieReviews';
@@ -84,8 +83,6 @@ function MovieDetailsPage() {
   );
 }
 
-MovieDetailsPage.propTypes = {
-  prevPath: PropTypes.string.isRequired,
-};
+
 
 export default MovieDetailsPage;

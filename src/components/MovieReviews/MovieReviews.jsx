@@ -6,8 +6,11 @@ import styles from './MovieReviews.module.css';
 function MovieReviews() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    setLoading(true);
     const fetchReviews = async () => {
       try {
         const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/reviews`, {
@@ -18,13 +21,24 @@ function MovieReviews() {
           }
         });
         setReviews(response.data.results);
+        setError(null);
       } catch (error) {
-        console.error('Error fetching movie reviews:', error);
+        setError('Failed to fetch reviews');
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchReviews();
   }, [movieId]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   if (!reviews.length) {
     return <div>No reviews found.</div>;
@@ -41,5 +55,6 @@ function MovieReviews() {
     </div>
   );
 }
+
 
 export default MovieReviews;

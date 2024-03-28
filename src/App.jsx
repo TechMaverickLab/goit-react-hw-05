@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { NavigationProvider } from './contexts/NavigationProvider';
 import Navigation from './components/Navigation/Navigation';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
@@ -10,19 +10,17 @@ const MovieDetailsPage = lazy(() => import('./pages/MovieDetailsPage/MovieDetail
 
 function App() {
   return (
-    <Router basename="/">
-      <NavigationProvider>
-        <Navigation />
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/movies" element={<MoviesPage />} />
-            <Route path="/movies/:movieId/*" element={<MovieDetailsPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </Suspense>
-      </NavigationProvider>
-    </Router>
+    <NavigationProvider>
+      <Navigation />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:movieId/*" element={<MovieDetailsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+    </NavigationProvider>
   );
 }
 
